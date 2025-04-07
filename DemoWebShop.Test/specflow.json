@@ -1,0 +1,12 @@
+{
+  "stepAssemblies": [
+    {
+      "assembly": "UIAutomation.Core"
+    },
+    {
+      "assembly": "DemoWebShop.Test"
+    }
+  ]
+
+
+}

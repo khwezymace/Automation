@@ -1,0 +1,13 @@
+{
+  "BrowserType": "1",
+  "BrowserVersion": "",
+  "GridHubUrl": "",
+
+
+  "StepScreenShot": "on",
+  "ExtentReportPortalUrl": "",
+  "ExtentReportToPortal": "off",
+  "LogLevel": "Debug",
+  "DataSetLocation": "",
+  "DownloadedLocation": ""
+}
