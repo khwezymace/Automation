@@ -1,3 +1,8 @@
 {
-  "SiteUrl": "https://demowebshop.tricentis.com/"
+  "SiteUrl": "https://demowebshop.tricentis.com/",
+  "FirstName": "Khwezikazi",
+  "LastName": "Ncanywa",
+  "EmailAddress": "khwezymace@gmail.com",
+  "Password": "Khwezi@1991",
+  "ConfirmPassword": "Khwezi@1991"
 }

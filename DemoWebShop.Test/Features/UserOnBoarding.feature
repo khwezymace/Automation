@@ -17,3 +17,12 @@ Scenario: User Login
 	And the user enters login details
 	And the user clicks on the login button
 	Then  the user should be successfully logged in
+
+@tag1
+Scenario: User Verifies Computers Page
+	Given the user navigates to the site
+	When  the user clicks on the login tab
+	And the user enters login details
+	And the user clicks on the login button
+	And the user clicks on the computers tab
+	Then  the user should be redirected on the computers page.
