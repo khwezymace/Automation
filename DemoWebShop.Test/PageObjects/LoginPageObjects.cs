@@ -1,5 +1,6 @@
 ﻿using BoDi;
 using DemoWebShop.Test.WebAbstraction;
+using NUnit.Framework;
 using UIAutomation.Core.Abstration;
 using UIAutomation.Core.Base;
 
@@ -19,7 +20,8 @@ namespace DemoWebShop.Test.PageObjects
 
         IAtBy ByLastName => GetBy(LocatorType.Xpath, "//input[@id='LastName']");
         IAtWebElement LastNameTxt => _idrivers.FindElement(ByLastName);
-        IAtBy ByEmailAddress => GetBy(LocatorType.Xpath, "//input[@id='Email']");
+        IAtBy ByEmailAddress => GetBy(LocatorType.Xpath, "//input[@id='Email']"); 
+
         IAtWebElement EmailAddressTxt => _idrivers.FindElement(ByEmailAddress);
         IAtBy ByPassword => GetBy(LocatorType.Xpath, "//input[@id='Password']");
         IAtWebElement PasswordTxt => _idrivers.FindElement(ByPassword);
@@ -27,6 +29,14 @@ namespace DemoWebShop.Test.PageObjects
         IAtWebElement PasswordConfirmTxt => _idrivers.FindElement(ByPasswordConfirm);
         IAtBy ByRegisterButton => GetBy(LocatorType.Xpath, "//input[@id='register-button']");
         IAtWebElement RegisterButton => _idrivers.FindElement(ByRegisterButton);
+
+        IAtBy ByLoginTab => GetBy(LocatorType.Xpath, "//a[@class='ico-login']");
+        IAtWebElement LoginTab => _idrivers.FindElement(ByLoginTab);
+        IAtBy ByLoginButton => GetBy(LocatorType.Xpath, "//input[@value='Log in']");
+        IAtWebElement LoginButton => _idrivers.FindElement(ByLoginButton);
+
+        IAtBy ByUserLogged => GetBy(LocatorType.Xpath, "//a[normalize-space()='khwezymace@gmail.com']");
+        IAtWebElement UserLogged => _idrivers.FindElement(ByUserLogged);
 
         public void NavigateToSiteUrl()
         {
@@ -59,6 +69,24 @@ namespace DemoWebShop.Test.PageObjects
             RegisterButton.Click_EventHandler();
             Thread.Sleep(1000);
         }
+        public void Click_LoginTab() {  LoginTab.Click_EventHandler(); }
+
+        public void UserEntersLoginDetails()
+        {
+            EmailAddressTxt.ClearText();
+            EmailAddressTxt.SendKeys(_iatConfiguration.GetConfiguration("EmailAddress"));
+            PasswordTxt.ClearText();
+            PasswordTxt.SendKeys(_iatConfiguration.GetConfiguration("Password"));
+        }
+        public void Click_LoginButton() { LoginButton.Click_EventHandler(); Thread.Sleep(1000); }
+
+        public void VerifyUserLogged()
+        {
+            UserLogged.GetText().Contains(_iatConfiguration.GetConfiguration("EmailAddress"));
+            Assert.IsTrue(UserLogged.IsDisplayed());
+
+        }
     }
+   
 }
 

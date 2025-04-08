@@ -1,0 +1,14 @@
+2025-04-07 21:49:15.529 +02:00 [DBG] ****************************************************************
+2025-04-07 21:49:15.535 +02:00 [INF] **********************************************************
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | RUN PARAMETERS
+2025-04-07 21:49:15.535 +02:00 [INF] **********************************************************
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | BROWSERTYPE1
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | GRID HUB URL
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | STEP SCREENSHOTTrue
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | EXTENT REPORT PORTAL URL
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | EXTENT REPORT LOCALLYFalse
+2025-04-07 21:49:15.535 +02:00 [INF] Configuration | LOG LEVELDebug
+2025-04-07 21:49:15.538 +02:00 [INF] Configuration | DATA SET LOCATIONC:\Users\onken\OneDrive - Capfin SA (Pty) Ltd\Documents\Assessment\Automation\DemoWebShop.Test\bin\Debug\net8.0\Resources\TestData.json
+2025-04-07 21:49:15.538 +02:00 [INF] Configuration | DOWNLOADED LOCATIONdownloadedFilePath
+2025-04-07 21:49:15.538 +02:00 [INF] **********************************************************
+2025-04-07 21:49:15.538 +02:00 [INF] **********************************************************

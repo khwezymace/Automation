@@ -5,9 +5,11 @@ using TechTalk.SpecFlow;
 namespace DemoWebShop.Test.StepDefinitions
 {
     [Binding]
-    public class UserOnBoardingStepDefinitions(ILoginPageObjects iloginPageObjects)
+    public class UserOnBoardingStepDefinitions(ILoginPageObjects iloginPageObjects,IDesktopPageObjects idesktopPageObjects, IHomePageObjects ihomePageObjects)
     {
         ILoginPageObjects _iloginPageObjects = iloginPageObjects;
+        IHomePageObjects _ihomePageObjects = ihomePageObjects;
+        IDesktopPageObjects _idesktopPageObjects = idesktopPageObjects;  
 
         [Given(@"the user navigates to the site")]
         public void GivenTheUserNavigatesToTheSite()
@@ -27,42 +29,68 @@ namespace DemoWebShop.Test.StepDefinitions
             _iloginPageObjects.CreateUserRegistration();
             
         }
-
-        [When(@"the user clicks on the register button")]
-        public void WhenTheUserClicksOnTheRegisterButton()
+        [Then(@"the user clicks on the register button")]
+        public void ThenTheUserClicksOnTheRegisterButton()
         {
-            _iloginPageObjects.Click_RegisterButton();  
-            
-        }
+            _iloginPageObjects.Click_RegisterButton();
 
-        [Then(@"the user should be successfully registered\.")]
-        public void ThenTheUserShouldBeSuccessfullyRegistered_()
-        {
-            
         }
 
         [When(@"the user clicks on the login tab")]
         public void WhenTheUserClicksOnTheLoginTab()
         {
+            _iloginPageObjects.Click_LoginTab();
             
         }
 
         [When(@"the user enters login details")]
         public void WhenTheUserEntersLoginDetails()
         {
-            
+            _iloginPageObjects.UserEntersLoginDetails();
         }
 
         [When(@"the user clicks on the login button")]
         public void WhenTheUserClicksOnTheLoginButton()
         {
-            
+            _iloginPageObjects.Click_LoginButton();
         }
 
         [Then(@"the user should be successfully logged in")]
         public void ThenTheUserShouldBeSuccessfullyLoggedIn()
         {
-            
+            _iloginPageObjects.VerifyUserLogged();
         }
+        [When(@"the user clicks on the computers tab")]
+        public void WhenTheUserClicksOnTheComputersTab()
+        {
+            _ihomePageObjects.UserClicksComputersTab();
+        }
+
+
+        [When(@"the user clicks on the desktop option from the dropdown\.")]
+        public void WhenTheUserClicksOnTheDesktopOptionFromTheDropdown_()
+        {
+            _ihomePageObjects.UserSelectsDesktopOption();
+        }
+
+        [Then(@"the user should be redirected to the deskstop option page\.")]
+        public void ThenTheUserShouldBeRedirectedToTheDeskstopOptionPage_()
+        {
+            _ihomePageObjects.ValidateLandingpageTitle("Demo Web Shop. Desktops");
+        }
+        [When(@"the user selects the sortBy dropdown using all options")]
+        public void WhenTheUserSelectsTheSortByDropdownUsingAllOptions()
+        {
+            _idesktopPageObjects.UserSortByProductsDropdownUsingAllOptions();
+        }
+
+        [Then(@"the desktop products should be orderby the given options\.")]
+        public void ThenTheDesktopProductsShouldBeOrderbyTheGivenOptions_()
+        {
+            throw new PendingStepException();
+        }
+
+
+
     }
 }

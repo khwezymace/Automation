@@ -6,6 +6,11 @@
         void Click_RegisterTab();
         void CreateUserRegistration();
         void Click_RegisterButton();
+        void Click_LoginTab();
+        void UserEntersLoginDetails();
+        void Click_LoginButton();
+        void VerifyUserLogged();
+
     }
 }
 

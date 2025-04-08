@@ -14,6 +14,8 @@ namespace DemoWebShop.Test.Container
         {
             iobjectContainer.RegisterTypeAs<AtConfiguration, IAtConfiguration>();
             iobjectContainer.RegisterTypeAs<LoginPageObjects, ILoginPageObjects>();
+            iobjectContainer.RegisterTypeAs<HomePageObjects, IHomePageObjects>();
+            iobjectContainer.RegisterTypeAs<DesktopPageObjects, IDesktopPageObjects>(); 
             iobjectContainer = CoreContainerConfig.SetContainer(iobjectContainer);
 
         }

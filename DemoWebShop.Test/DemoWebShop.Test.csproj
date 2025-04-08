@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Results\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
 
